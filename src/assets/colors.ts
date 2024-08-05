@@ -1,4 +1,10 @@
 export const colors = {
+  primary: "#DC5978",
+  secondary: "##f2a6b3",
+  third: "#ffe3eb",
+  fourth: "#2f4858",
+  background: "",
+  darkBackground: "",
   dullOrange: "#df8c29",
   tealish: "#1fa1ab",
   sienna: "#b07016",
@@ -80,13 +86,10 @@ export const colors = {
   MF50: "#80CBE7",
   TD100: "#00A4AD",
   TD50: "#80D2D6",
-  MF100: "#0096CF",
-  MF50: "#80CBE7",
   Red100: "#677E8C",
   Red50: "#E8818D",
   CA100: "#009E6D",
   CA50: "#80CFB6",
-  BO100: "#005794",
   BO50: "#80ABCA",
   PL100: "#EE8800",
   PL50: "#F7C480",
@@ -107,7 +110,6 @@ export const colors = {
   KeyboardBG: "#05182F",
   KeyboardButton: "#002F56",
   CASA10Border: "rgba(197, 209, 216, 1.0)",
-  SR100: "#2C4C7C",
   systemYellow: "#FFF0C7",
   white85: "rgba(255,255,255,0.85)",
   white20: "rgba(255,255,255,0.2)",
@@ -143,78 +145,57 @@ export const colors = {
   TDPRDUSD: "#00A4AD",
   TDPRDIBIDR: "#008364",
   TDPRDIBUSD: "#006D96",
-  PB100: "#163871",
   whiteunderlinedarkmode: "rgba(255,255,255, 0.2)",
   Dark75: "#8C8C8C",
   PB125: "#102A55",
-  SA125: "#006656",
-  TD125: "#007B82",
   INS125: "#00347A",
   dullYellow: "#FFF0C7",
 };
 
-export const darkTheme = (mode, color) => {
-  let newColor = "";
+export const darkTheme = (mode: string, color: string) => {
+  let newColor = color;
   if (mode == "dark") {
     newColor = colors.whiteThree;
-  } else {
-    newColor = color;
   }
 
   return newColor;
 };
 
-export const lightToDarks = (mode, color) => {
-  let newColor = "";
+export const lightToDarks = (mode: string, color: string) => {
+  let newColor = color;
   if (mode == "dark") {
     newColor = colors.darkest;
-  } else {
-    newColor = color;
   }
 
   return newColor;
 };
 
-export const switchHeaderColor = (mode) => {
-  let newColor = "";
+export const switchHeaderColor = (mode: string) => {
+  let newColor = colors.whiteThree;
   if (mode == "dark") {
     newColor = colors.Dark150;
-  } else {
+  }
+
+  return newColor;
+};
+
+export const switchFooterColor = (mode: string, color: string) => {
+  let newColor = color;
+  if (mode == "dark") {
     newColor = colors.whiteThree;
   }
 
   return newColor;
 };
 
-export const switchFooterColor = (mode, color) => {
-  let newColor = "";
-  if (mode == "dark") {
-    newColor = colors.whiteThree;
-  } else {
-    newColor = color;
-  }
+export const switchTextColorToLight = (mode: string, color: string) => {
+  let newColor = mode == "dark" ? colors.whiteThree : color;
 
   return newColor;
 };
 
-export const switchTextColorToLight = (mode, color) => {
-  let newColor = "";
-  if (mode == "dark") {
-    newColor = colors.whiteThree;
-  } else {
-    newColor = color;
-  }
-
-  return newColor;
-};
-
-export const switchWhiteToNew = (mode, color) => {
-  let newColor = "";
-  if (mode == "dark") {
-    newColor = color;
-  } else {
-    newColor = colors.whiteThree;
-  }
+export const switchWhiteToNew = (mode: string, color: string) => {
+  let newColor = mode == "dark" ? color : colors.whiteThree;
 
   return newColor;
 };
