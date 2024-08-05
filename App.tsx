@@ -12,12 +12,15 @@ import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, 
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { MainStackNavigator } from "@/navigator/index";
+import { LocalizationProvider } from "@/utils/translation";
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaProvider>
       <NetworkProvider>
-        <MainStackNavigator />
+        <LocalizationProvider>
+          <MainStackNavigator />
+        </LocalizationProvider>
       </NetworkProvider>
     </SafeAreaProvider>
   );
