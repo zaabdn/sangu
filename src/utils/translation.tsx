@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useState } from "react";
+import React, { createContext, ReactNode, useContext, useState } from "react";
 
 import LocalizedStrings from "react-native-localization";
 import { MMKV } from "react-native-mmkv";
@@ -65,3 +65,5 @@ export function LocalizationProvider({ children }: LocalizationProviderProps) {
     </LocalizationContext.Provider>
   );
 }
+
+export const useTranslation = () => useContext(LocalizationContext);
